@@ -3,6 +3,9 @@
   <head>
     <title>Персональна сторінка Гедза Григорія Валерійовича</title>
     <style>
+         ul {
+        list-style: none;
+      }
       h1 {
         text-align: center;
         font-size: 24px;
@@ -10,12 +13,34 @@
       p {
         font-size: 120%;
       }
-      a:link {
-        color: blue;
-      }
-      a:visited {
-        color: purple;
-      }
+      a[href="biography.html"]:link {
+color: blue;
+}
+
+a[href="biography.html"]:visited {
+color: red;
+}
+a[href="nowadays.html"]:link {
+color: palegoldenrod;
+}
+
+a[href="nowadays.html"]:visited {
+color: black;
+}
+a[href="friends.html"]:link {
+color: pink;
+}
+
+a[href="friends.html"]:visited {
+color: firebrick;
+}
+a[href="gallery.html"]:link {
+color: peru;
+}
+
+a[href="gallery.html"]:visited {
+color: yellow;
+}
     </style>
   </head>
   
@@ -25,10 +50,10 @@
     Я цікавлюся програмуванням і завжди намагаюсь розвиватись в цьому напрямку.
     У вільний час я люблю читати або займатись спортом та проводжу час з друзями.</p>
     <ul>
-      <li><a href="biography.html" style="color: #ff0000;">Автобіографія</a></li>
-      <li><a href="nowadays.html" style="color: #00ff00;">Сьогодення</a></li>
-      <li><a href="friends.html" style="color: #0000ff;">Друзі</a></li>
-      <li><a href="gallery.html" style="color: #ff00ff;">Галерея</a></li>
+      <li><a href="biography.html" >Автобіографія</a></li>
+      <li><a href="nowadays.html" >Сьогодення</a></li>
+      <li><a href="friends.html" >Друзі</a></li>
+      <li><a href="gallery.html" >Галерея</a></li>
     </ul>
   </body>
 </html>
