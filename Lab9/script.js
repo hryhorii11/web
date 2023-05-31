@@ -7,14 +7,14 @@ const route = (event) => {
 
 const routes = {
 
-    "/webclass/Lab9/": "/webclass/Lab9/index.html",
-    "/webclass/Lab9/catalog": "/webclass/Lab9/pages/catalog.html",
-    "/webclass/Lab9/catalog/1": "/webclass/Lab9/pages/catalog_data.html",
-    "/webclass/Lab9/catalog/2": "/webclass/Lab9/pages/catalog_data.html",
-    "/webclass/Lab9/catalog/3": "/webclass/Lab9/pages/catalog_data.html",
-    "/webclass/Lab9/catalog/4": "/webclass/Lab9/pages/catalog_data.html",
-    "/webclass/Lab9/catalog/5": "/webclass/Lab9/pages/catalog_data.html",
-    "/webclass/Lab9/catalog/6": "/webclass/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/": "/web/Lab9/index.html",
+    "/webclass/Lab9/catalog": "/web/Lab9/pages/catalog.html",
+    "/webclass/Lab9/catalog/1": "/web/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/catalog/2": "/web/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/catalog/3": "/web/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/catalog/4": "/web/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/catalog/5": "/web/Lab9/pages/catalog_data.html",
+    "/webclass/Lab9/catalog/6": "/web/Lab9/pages/catalog_data.html",
 };
 const endsWithNumber = (text) => {
     return /\d$/.test(text);
@@ -27,13 +27,13 @@ const handleLocation = async () => {
     const route = routes[path];
     
     if (path === "/webclass/Lab9/") {
-        const html = await fetch('/webclass/Lab9/index.html').then((data) => data.text());
+        const html = await fetch('/web/Lab9/index.html').then((data) => data.text());
         document.getElementsByTagName("html")[0].innerHTML = html;
     }
     else if (endsWithNumber(path)) {
-        const html = await fetch('/webclass/Lab9/pages/catalog_data.html').then((data) => data.text());
-        const data = await fetch(`/webclass/Lab9/data/catalog${path.slice(-1)}.json`).then((response) => response.json()).then((responseData) => responseData);
-        const dataTitles = await fetch(`/webclass/Lab9/data/catalog.json`).then((response) => response.json()).then((responseData) => responseData);
+        const html = await fetch('/web/Lab9/pages/catalog_data.html').then((data) => data.text());
+        const data = await fetch(`/web/Lab9/data/catalog${path.slice(-1)}.json`).then((response) => response.json()).then((responseData) => responseData);
+        const dataTitles = await fetch(`/web/Lab9/data/catalog.json`).then((response) => response.json()).then((responseData) => responseData);
         if (data) {
             let dataText = "";
 
@@ -74,8 +74,8 @@ const handleLocation = async () => {
         }
     }
     else {
-        const html = await fetch("/webclass/Lab9/pages/catalog.html").then((data) => data.text());
-        const data = await fetch(`/webclass/Lab9/data/catalog.json`).then((response) => response.json()).then((responseData) => responseData);
+        const html = await fetch("/web/Lab9/pages/catalog.html").then((data) => data.text());
+        const data = await fetch(`/web/Lab9/data/catalog.json`).then((response) => response.json()).then((responseData) => responseData);
 
         if (data) {
             let dataText = "";
@@ -109,7 +109,7 @@ window.onpopstate = handleLocation;
 window.route = route;
 window.onbeforeunload = function () {
     window.setTimeout(function () {
-        window.location = '/webclass/Lab9/';
+        window.location = '/web/Lab9/';
     }, 0);
     window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
 }
